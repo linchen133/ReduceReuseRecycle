@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ReduceReuseRecycle/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/ReduceReuseRecycle/static/js/main.aa63876f.chunk.js",
-    "main.js.map": "/ReduceReuseRecycle/static/js/main.aa63876f.chunk.js.map",
+    "main.css": "/ReduceReuseRecycle/static/css/main.2ae47eeb.chunk.css",
+    "main.js": "/ReduceReuseRecycle/static/js/main.5125862b.chunk.js",
+    "main.js.map": "/ReduceReuseRecycle/static/js/main.5125862b.chunk.js.map",
     "runtime-main.js": "/ReduceReuseRecycle/static/js/runtime-main.e0e24238.js",
     "runtime-main.js.map": "/ReduceReuseRecycle/static/js/runtime-main.e0e24238.js.map",
     "xlsx.js": "/ReduceReuseRecycle/static/js/xlsx.4a5a546f.chunk.js",
@@ -16,7 +16,7 @@
     "static/js/6.4841fdb5.chunk.js": "/ReduceReuseRecycle/static/js/6.4841fdb5.chunk.js",
     "static/js/6.4841fdb5.chunk.js.map": "/ReduceReuseRecycle/static/js/6.4841fdb5.chunk.js.map",
     "index.html": "/ReduceReuseRecycle/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/ReduceReuseRecycle/static/css/main.6dea0f05.chunk.css.map",
+    "static/css/main.2ae47eeb.chunk.css.map": "/ReduceReuseRecycle/static/css/main.2ae47eeb.chunk.css.map",
     "static/js/4.a2c1df2e.chunk.js.LICENSE.txt": "/ReduceReuseRecycle/static/js/4.a2c1df2e.chunk.js.LICENSE.txt",
     "static/js/5.736b4c05.chunk.js.LICENSE.txt": "/ReduceReuseRecycle/static/js/5.736b4c05.chunk.js.LICENSE.txt",
     "static/js/6.4841fdb5.chunk.js.LICENSE.txt": "/ReduceReuseRecycle/static/js/6.4841fdb5.chunk.js.LICENSE.txt",
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.e0e24238.js",
     "static/js/4.a2c1df2e.chunk.js",
-    "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.aa63876f.chunk.js"
+    "static/css/main.2ae47eeb.chunk.css",
+    "static/js/main.5125862b.chunk.js"
   ]
 }
