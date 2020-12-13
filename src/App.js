@@ -56,8 +56,8 @@ function App() {
     const elements = [
         <Welcome key={0} />,
         <Line data={lineData} key={1} />,
-        <Map data={mapData} key={2} />,
-        <Race data={raceData} key={3} />,
+        <Race data={raceData} key={2} />,
+        <Map data={mapData} key={3} />,
     ];
 
     const handlePrev = () => {
