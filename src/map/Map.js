@@ -178,7 +178,8 @@ function Map({ data }) {
     return (
         <>
             <div className={''} style={{ width: '100%', height: '100%' }}>
-                <form className={'d-flex justify-content-center p-2'}>
+                <h4 className={'text-center pt-1'}>Select two variables and learn more about their correlation</h4>
+                <form className={'d-flex justify-content-center pb-2'}>
                     <select className={'mr-2'} value={xAxis} onChange={(selected) => setxAxis(selected.target.value)}>
                         <option value={'GNI (income in $)'}>GNI per capita ($)</option>
                         <option value={'population'}>Population</option>

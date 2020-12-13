@@ -123,12 +123,21 @@ function Race({ data }) {
         series.events.on('inited', function () {
             categoryAxis.zoom({ start: 0, end: 20 / categoryAxis.dataItems.length });
             setTimeout(function () {
-                playButton.isActive = true;
+                playButton.isActive = false;
             }, 2000);
         });
     }, [data]);
 
-    return <div id="racediv" style={{ width: '100%', height: '100%' }} />;
+    return (
+        <>
+            <div style={{ width: '100%', height: '100%' }}>
+                <h4 className={'text-center pt-1'}>
+                    Press “Play” and see which EU country wins the municipal waste generation race
+                </h4>
+                <div id="racediv" style={{ width: '100%', height: '100%' }} />
+            </div>
+        </>
+    );
 }
 
 export default Race;

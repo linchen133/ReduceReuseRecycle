@@ -7,12 +7,13 @@ import mapPath from './res/data_for_visualisations.csv';
 import wastePath from './res/data_bar_chart_race.csv';
 import Race from './race/Race';
 import Line from './line/Line';
+import Welcome from './Welcome';
 
 function App() {
     const [mapData, setMapData] = useState();
     const [raceData, setRaceData] = useState();
     const [lineData, setlineData] = useState();
-    const [currentElement, setCurrentElement] = useState(2);
+    const [currentElement, setCurrentElement] = useState(0);
 
     // Load data
     useEffect(() => {
@@ -53,9 +54,10 @@ function App() {
     }, []);
 
     const elements = [
-        <Map data={mapData} key={0} />,
-        <Race data={raceData} key={1} />,
-        <Line data={lineData} key={2} />,
+        <Welcome key={0} />,
+        <Line data={lineData} key={1} />,
+        <Map data={mapData} key={2} />,
+        <Race data={raceData} key={3} />,
     ];
 
     const handlePrev = () => {

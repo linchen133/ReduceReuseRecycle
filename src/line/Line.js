@@ -84,6 +84,9 @@ function Line({ data }) {
     return (
         <>
             <div style={{ width: '100%', height: '100%' }}>
+                <h4 className={'text-center pt-1'}>
+                    Compare the municipal waste generation between two countries of the EU
+                </h4>
                 <form className={'d-flex justify-content-center p-2'}>
                     <select
                         value={countryA}
