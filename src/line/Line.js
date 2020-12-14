@@ -24,31 +24,38 @@ function Line({ data }) {
 
         // Axis'
         const dateAxis = newChart.xAxes.push(new am4charts.DateAxis());
+        dateAxis.renderer.minGridDistance = 20;
+
         const valueAxis = newChart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.title.text = 'Waste per capita (kg)';
         valueAxis.title.fontWeight = 'bold';
 
-        // Series
+        // Series'
         const countryASeries = newChart.series.push(new am4charts.LineSeries());
         countryASeries.dataFields.valueY = 'countryA';
         countryASeries.dataFields.dateX = 'date';
+
         countryASeries.tooltipText = '{countryA}';
         countryASeries.tooltip.pointerOrientation = 'vertical';
 
-        //TODO fix tooltip colors
         countryASeries.strokeWidth = 4;
         countryASeries.stroke = am4core.color('#4ea7ff');
+        countryASeries.tooltip.getFillFromObject = false;
+        countryASeries.tooltip.background.fill = am4core.color('#4ea7ff');
 
         setSeriesA(countryASeries);
 
         const countryBSeries = newChart.series.push(new am4charts.LineSeries());
         countryBSeries.dataFields.valueY = 'countryB';
         countryBSeries.dataFields.dateX = 'date';
+
         countryBSeries.tooltipText = '{countryB}';
         countryBSeries.tooltip.pointerOrientation = 'vertical';
 
         countryBSeries.strokeWidth = 4;
         countryBSeries.stroke = am4core.color('#ff6720');
+        countryBSeries.tooltip.getFillFromObject = false;
+        countryBSeries.tooltip.background.fill = am4core.color('#ff6720');
 
         setSeriesB(countryBSeries);
 
@@ -84,7 +91,7 @@ function Line({ data }) {
     return (
         <>
             <div style={{ width: '100%', height: '100%' }}>
-                <h4 className={'text-center pt-1'}>
+                <h4 className={'text-center pt-2'}>
                     Compare the municipal waste generation between two countries of the EU
                 </h4>
                 <form className={'d-flex justify-content-center p-2'}>
@@ -107,7 +114,7 @@ function Line({ data }) {
                         ))}
                     </select>
                 </form>
-                <div id="linediv" style={{ width: '100%', height: '100%' }} className={'border rounded'} />
+                <div id="linediv" style={{ width: '95%', height: '100%', marginLeft: '2.5%' }} />
             </div>
         </>
     );

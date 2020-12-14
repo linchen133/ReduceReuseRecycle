@@ -33,21 +33,26 @@ function App() {
                 // TODO should probably not be here also is very hacked together and unsafe
                 const raceRange = Array.from({ length: 19 }, (_, i) => i + 2000);
 
-                setRaceData(
-                    _.reduce(
-                        raceRange,
-                        (acc, year) => {
-                            return {
-                                ...acc,
-                                [year]: _.map(csv.data, (country) => {
-                                    const value = _.get(country, year);
-                                    return { id: country['Country'], value: isNaN(value) ? '0' : value };
-                                }),
-                            };
-                        },
-                        {}
-                    )
+                const rData = _.reduce(
+                    raceRange,
+                    (acc, year) => {
+                        return {
+                            ...acc,
+                            [year]: _.map(csv.data, (country) => {
+                                const value = _.get(country, year);
+                                return { id: country['Country'], value: isNaN(value) ? '0' : value };
+                            }),
+                        };
+                    },
+                    {}
                 );
+                rData.countryCategories = _.reduce(
+                    csv.data,
+                    (acc, country) => ({ ...acc, [country.Country]: country.Category }),
+                    {}
+                );
+
+                setRaceData(rData);
 
                 setlineData(_.groupBy(csv.data, (country) => country.Country));
             });

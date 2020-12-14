@@ -54,6 +54,7 @@ function Map({ data }) {
     const [yAxisLegend, setYAxisLegend] = useState();
 
     const [isMapCreated, setIsMapCreated] = useState(false);
+    const [showDetail, setShowDetail] = useState(false);
 
     // Create map hook
     useEffect(() => {
@@ -128,6 +129,7 @@ function Map({ data }) {
     }, []);
 
     // Generate polygons from data
+    // Should pobably be called less often for the sake of performance
     useEffect(() => {
         if (data && isMapCreated) {
             const currentViewData = _.map(data, (country) => {
@@ -163,6 +165,9 @@ function Map({ data }) {
 
             let tooltip = '[bold]{name}[/]';
             _.forEach(axisMapping, (key, value) => {
+                if (!showDetail && value.includes('composition')) {
+                    return;
+                }
                 if (value === xAxis || value === yAxis) {
                     tooltip = tooltip.concat(`\n[bold]${key}: {${value}}[/]`);
                 } else {
@@ -173,12 +178,12 @@ function Map({ data }) {
 
             polygonTemplate.propertyFields.fill = 'fill';
         }
-    }, [data, map, polygons, xAxis, yAxis]);
+    }, [data, map, polygons, xAxis, yAxis, showDetail]);
 
     return (
         <>
             <div className={''} style={{ width: '100%', height: '100%' }}>
-                <h4 className={'text-center pt-1'}>Select two variables and learn more about their correlation</h4>
+                <h4 className={'text-center pt-2'}>Select two variables and learn more about their correlation</h4>
                 <form className={'d-flex justify-content-center pb-2'}>
                     <select className={'mr-2'} value={xAxis} onChange={(selected) => setxAxis(selected.target.value)}>
                         <option value={'GNI (income in $)'}>GNI per capita ($)</option>
@@ -186,11 +191,17 @@ function Map({ data }) {
                         <option value={'total_msw_total_msw_generated_tons_year'}>Total waste generated (t)</option>
                         <option value={'msw_per_capita_in_kg'}>Waste per capita (kg)</option>
                     </select>
-                    <select value={yAxis} onChange={(selected) => setyAxis(selected.target.value)}>
+                    <select className={'mr-2'} value={yAxis} onChange={(selected) => setyAxis(selected.target.value)}>
                         <option value={'total_msw_total_msw_generated_tons_year'}>Total waste generated (t)</option>
                         <option value={'msw_per_capita_in_kg'}>Waste per capita (kg)</option>
                         <option value={'waste_treatment_recycling_percent'}>Recycling rate (%)</option>
                     </select>
+                    <div className="btn-group-toggle" data-toggle="buttons">
+                        <label className={`btn  ${showDetail ? 'btn-success' : 'btn-outline-success'}`}>
+                            <input type="checkbox" onChange={() => setShowDetail(!showDetail)} />
+                            Show detailed composition
+                        </label>
+                    </div>
                 </form>
 
                 <div className={'border rounded'} id="mapdiv" style={{ width: '100%', height: '100%' }} />

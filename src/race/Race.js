@@ -4,6 +4,14 @@ import * as am4core from '@amcharts/amcharts4/core';
 import * as am4charts from '@amcharts/amcharts4/charts';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 
+const colorMap = {
+    Southeasteurope: '#3895FD',
+    Centraleurope: '#32B4E3',
+    Westerneurope: '#43F9F9',
+    Northerneurope: '#32E3B1',
+    Southerneurope: '#38FD8D',
+};
+
 function Race({ data }) {
     useEffect(() => {
         if (!data) return;
@@ -48,6 +56,7 @@ function Race({ data }) {
         valueAxis.rangeChangeEasing = am4core.ease.linear;
         valueAxis.rangeChangeDuration = stepDuration;
         valueAxis.extraMax = 0.1;
+        valueAxis.title.text = 'Waste per capita (kg)';
 
         const series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.categoryY = 'id';
@@ -67,9 +76,41 @@ function Race({ data }) {
 
         chart.zoomOutButton.disabled = true;
 
-        series.columns.template.adapter.add('fill', function (_fill, target) {
-            return chart.colors.getIndex(target.dataItem.index);
+        series.columns.template.adapter.add('fill', function (_, target) {
+            return am4core.color(colorMap[data.countryCategories[target.dataItem.categoryY]]);
         });
+
+        const legend = new am4charts.Legend();
+        legend.parent = chart.chartContainer;
+        legend.align = 'center';
+        legend.itemContainers.template.clickable = false;
+        legend.itemContainers.template.focusable = false;
+        legend.itemContainers.template.cursorOverStyle = am4core.MouseCursorStyle.default;
+        legend.data = [
+            {
+                name: 'Central Europe',
+                fill: '#32B4E3',
+            },
+            {
+                name: 'Northern Europe',
+                fill: '#32E3B1',
+            },
+            {
+                name: 'Southeast Europe',
+                fill: '#3895FD',
+            },
+            {
+                name: 'Southern Europe',
+                fill: '#38FD8D',
+            },
+
+            {
+                name: 'Western Europe',
+                fill: '#43F9F9',
+            },
+        ];
+
+        series.propertyFields.fill = 'fill';
 
         let year = 2000;
         label.text = year.toString();
@@ -96,10 +137,6 @@ function Race({ data }) {
             year++;
 
             if (year > 2018) {
-                // repeat
-                // year = 2000;
-
-                // stop at 2018
                 year = 2018;
                 playButton.isActive = false;
             }
@@ -131,8 +168,8 @@ function Race({ data }) {
     return (
         <>
             <div style={{ width: '100%', height: '100%' }}>
-                <h4 className={'text-center pt-1'}>
-                    Press “Play” and see which EU country wins the municipal waste generation race
+                <h4 className={'text-center pt-2'}>
+                    Use the Play-Button to see which EU country wins the municipal waste generation race
                 </h4>
                 <div id="racediv" style={{ width: '100%', height: '100%' }} />
             </div>
