@@ -1,32 +1,32 @@
 {
   "files": {
     "main.css": "/ReduceReuseRecycle/static/css/main.2ae47eeb.chunk.css",
-    "main.js": "/ReduceReuseRecycle/static/js/main.5125862b.chunk.js",
-    "main.js.map": "/ReduceReuseRecycle/static/js/main.5125862b.chunk.js.map",
+    "main.js": "/ReduceReuseRecycle/static/js/main.ee58fe00.chunk.js",
+    "main.js.map": "/ReduceReuseRecycle/static/js/main.ee58fe00.chunk.js.map",
     "runtime-main.js": "/ReduceReuseRecycle/static/js/runtime-main.e0e24238.js",
     "runtime-main.js.map": "/ReduceReuseRecycle/static/js/runtime-main.e0e24238.js.map",
     "xlsx.js": "/ReduceReuseRecycle/static/js/xlsx.4a5a546f.chunk.js",
     "xlsx.js.map": "/ReduceReuseRecycle/static/js/xlsx.4a5a546f.chunk.js.map",
     "static/js/3.248d7a83.chunk.js": "/ReduceReuseRecycle/static/js/3.248d7a83.chunk.js",
     "static/js/3.248d7a83.chunk.js.map": "/ReduceReuseRecycle/static/js/3.248d7a83.chunk.js.map",
-    "static/js/4.a2c1df2e.chunk.js": "/ReduceReuseRecycle/static/js/4.a2c1df2e.chunk.js",
-    "static/js/4.a2c1df2e.chunk.js.map": "/ReduceReuseRecycle/static/js/4.a2c1df2e.chunk.js.map",
+    "static/js/4.435449a6.chunk.js": "/ReduceReuseRecycle/static/js/4.435449a6.chunk.js",
+    "static/js/4.435449a6.chunk.js.map": "/ReduceReuseRecycle/static/js/4.435449a6.chunk.js.map",
     "static/js/5.736b4c05.chunk.js": "/ReduceReuseRecycle/static/js/5.736b4c05.chunk.js",
     "static/js/5.736b4c05.chunk.js.map": "/ReduceReuseRecycle/static/js/5.736b4c05.chunk.js.map",
     "static/js/6.4841fdb5.chunk.js": "/ReduceReuseRecycle/static/js/6.4841fdb5.chunk.js",
     "static/js/6.4841fdb5.chunk.js.map": "/ReduceReuseRecycle/static/js/6.4841fdb5.chunk.js.map",
     "index.html": "/ReduceReuseRecycle/index.html",
     "static/css/main.2ae47eeb.chunk.css.map": "/ReduceReuseRecycle/static/css/main.2ae47eeb.chunk.css.map",
-    "static/js/4.a2c1df2e.chunk.js.LICENSE.txt": "/ReduceReuseRecycle/static/js/4.a2c1df2e.chunk.js.LICENSE.txt",
+    "static/js/4.435449a6.chunk.js.LICENSE.txt": "/ReduceReuseRecycle/static/js/4.435449a6.chunk.js.LICENSE.txt",
     "static/js/5.736b4c05.chunk.js.LICENSE.txt": "/ReduceReuseRecycle/static/js/5.736b4c05.chunk.js.LICENSE.txt",
     "static/js/6.4841fdb5.chunk.js.LICENSE.txt": "/ReduceReuseRecycle/static/js/6.4841fdb5.chunk.js.LICENSE.txt",
-    "static/media/data_bar_chart_race.6bb34650.csv": "/ReduceReuseRecycle/static/media/data_bar_chart_race.6bb34650.csv",
+    "static/media/data_bar_chart_race.441527ad.csv": "/ReduceReuseRecycle/static/media/data_bar_chart_race.441527ad.csv",
     "static/media/data_for_visualisations.f086fa6a.csv": "/ReduceReuseRecycle/static/media/data_for_visualisations.f086fa6a.csv"
   },
   "entrypoints": [
     "static/js/runtime-main.e0e24238.js",
-    "static/js/4.a2c1df2e.chunk.js",
+    "static/js/4.435449a6.chunk.js",
     "static/css/main.2ae47eeb.chunk.css",
-    "static/js/main.5125862b.chunk.js"
+    "static/js/main.ee58fe00.chunk.js"
   ]
 }
